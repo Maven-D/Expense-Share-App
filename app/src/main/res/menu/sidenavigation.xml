@@ -21,6 +21,21 @@
     </group>
 
     <group android:checkableBehavior="single">
+        <item android:title="Communicate">
+            <menu>
+                <item
+                    android:id="@+id/share"
+                    android:icon="@drawable/ic_baseline_share_24"
+                    android:title="Share" />
+                <item
+                    android:id="@+id/send"
+                    android:icon="@drawable/ic_baseline_send_24"
+                    android:title="Send" />
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
 
         <item android:title="Authentication">
             <menu>
@@ -32,21 +47,6 @@
                     android:id="@+id/logout"
                     android:icon="@drawable/ic_baseline_logout_24"
                     android:title="Logout" />
-            </menu>
-        </item>
-    </group>
-
-    <group android:checkableBehavior="single">
-        <item android:title="Communicate">
-            <menu>
-                <item
-                    android:id="@+id/share"
-                    android:icon="@drawable/ic_baseline_share_24"
-                    android:title="Share" />
-                <item
-                    android:id="@+id/send"
-                    android:icon="@drawable/ic_baseline_send_24"
-                    android:title="Send" />
             </menu>
         </item>
     </group>
