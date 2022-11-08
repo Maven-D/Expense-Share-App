@@ -1,13 +1,15 @@
 package com.example.expense_share_app
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var drawerLayout: DrawerLayout
     lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
 
@@ -18,6 +20,8 @@ class HomeActivity : AppCompatActivity() {
         // drawer layout instance to toggle the menu icon to open
         // drawer and back button to close drawer
         drawerLayout = findViewById(R.id.my_drawer_layout)
+        val navigationView = drawerLayout.findViewById<NavigationView>(R.id.my_navigation_view)
+        navigationView.setNavigationItemSelectedListener(this)
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close)
 
         // pass the Open and Close toggle for the drawer layout listener
@@ -38,5 +42,13 @@ class HomeActivity : AppCompatActivity() {
         return if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             true
         } else super.onOptionsItemSelected(item)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.group_menu -> startActivity(Intent(applicationContext, MyGroupsActivity::class.java))
+            R.id.add_group_menu -> startActivity(Intent(applicationContext, NewGroupActivity::class.java))
+        }
+        return true;
     }
 }

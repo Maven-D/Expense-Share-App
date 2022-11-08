@@ -28,7 +28,7 @@ class SignupPage : Fragment() {
         signInButton.setOnClickListener(View.OnClickListener {
             val intent = Intent(context, MainActivity::class.java)
             intent.putExtra("callIntent", 1)
-            startActivity(intent)
+                    startActivity(intent)
         })
         val signUpButton = view.findViewById<Button>(R.id.sign_up_button)
         signUpButton.setOnClickListener(View.OnClickListener {
