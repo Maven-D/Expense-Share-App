@@ -16,13 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/group_button"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
-            android:gravity="center"
-            android:text="Home Activity"
-            android:textSize="18sp" />
+            android:layout_weight="1"
+            android:text="Group"
+            />
     </LinearLayout>
 
     <!-- this the navigation view which draws and shows the navigation drawer -->
