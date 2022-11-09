@@ -18,13 +18,16 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/amount"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
         android:hint="@string/enter_amount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,26 +41,136 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+<!--    <Button-->
+<!--        android:id="@+id/calculate_button"-->
+<!--        android:layout_width="350dp"-->
+<!--        android:layout_height="66dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="56dp"-->
+<!--        android:text="Calculate"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/amount"-->
+<!--        app:layout_constraintHorizontal_bias="0.39"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/amount"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/amount"></Button>-->
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/share1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="Enter % share of User1:"
+        app:layout_constraintEnd_toEndOf="@+id/amount"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="@+id/amount"
+        app:layout_constraintTop_toBottomOf="@+id/amount">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/share1_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/result1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/share1"
+            tools:text="Shared Amount: $10" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/share2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="Enter % share of User2:"
+            app:layout_constraintStart_toStartOf="@+id/share1"
+            app:layout_constraintTop_toBottomOf="@+id/share1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/share2_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/result2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/share2"
+            tools:text="Shared Amount: $10" />
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/share3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="Enter % share of User3:"
+            app:layout_constraintStart_toStartOf="@+id/share2"
+            app:layout_constraintTop_toBottomOf="@+id/share2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/share3_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/result3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/share3"
+            tools:text="Shared Amount: $10" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/share4"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="Enter % share of User4:"
+            app:layout_constraintStart_toStartOf="@+id/share3"
+            app:layout_constraintTop_toBottomOf="@+id/share3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/share4_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/result4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/share4"
+            tools:text="Shared Amount: $10" />
+
     <Button
         android:id="@+id/calculate_button"
         android:layout_width="350dp"
         android:layout_height="66dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="56dp"
         android:text="Calculate"
-        app:layout_constraintEnd_toEndOf="@+id/amount"
-        app:layout_constraintHorizontal_bias="0.39"
-        app:layout_constraintStart_toStartOf="@+id/amount"
-        app:layout_constraintTop_toBottomOf="@+id/amount"></Button>
+        app:layout_constraintEnd_toEndOf="@+id/share4"
+        app:layout_constraintHorizontal_bias="0.386"
+        app:layout_constraintStart_toStartOf="@+id/share4"
+        app:layout_constraintTop_toBottomOf="@+id/share4"></Button>
 
-    <TextView
-    android:id="@+id/result"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/calculate_button"
-        android:textSize="21sp"
-    tools:text="Shared Amount: $10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
