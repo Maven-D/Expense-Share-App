@@ -8,27 +8,20 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.expense_share_app.databinding.ActivityMyGroupsBinding
+import com.example.expense_share_app.databinding.ActivitySplitAmountBinding
 
-class MyGroupsActivity : AppCompatActivity() {
+class SplitAmount : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMyGroupsBinding
+    private lateinit var binding: ActivitySplitAmountBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMyGroupsBinding.inflate(layoutInflater)
+        binding = ActivitySplitAmountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
 
-
-        binding.button1.setOnClickListener{
-            val intent = Intent(applicationContext, PaymentActivity::class.java)
-            startActivity(intent)
-        }
     }
-
-
 }

@@ -24,4 +24,7 @@
     <string name="title_activity_payment">PaymentActivity</string>
     <string name="enter_amount">Enter_amount</string>
     <string name="share_amount">Share Amount: %s</string>
+    <string name="title_activity_split_amount">SplitAmount</string>
+    <string name="title_activity_split_share">SplitShare</string>
+    <string name="group_s_name">Group\'s Name</string>
 </resources>

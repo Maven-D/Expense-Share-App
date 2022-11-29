@@ -12,7 +12,7 @@ import com.example.expense_share_app.databinding.FragmentSignupPageBinding
 
 
 class SignupPage : Fragment() {
-     private var _binding: FragmentSignupPageBinding? = null
+     private lateinit var _binding: com.example.expense_share_app.databinding.FragmentSignupPageBinding
      private val binding get()= _binding!!
 
     override fun onCreateView(inflater:LayoutInflater, container: ViewGroup?,
