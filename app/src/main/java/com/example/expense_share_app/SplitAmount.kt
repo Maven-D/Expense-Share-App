@@ -1,6 +1,5 @@
 package com.example.expense_share_app
 
-
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
