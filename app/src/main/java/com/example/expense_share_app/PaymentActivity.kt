@@ -31,6 +31,7 @@ class PaymentActivity : AppCompatActivity() {
            val amount = binding.amountEditText.text.toString().toInt()
            intent.putExtra("Extra_amount", amount)
            startActivity(intent)
+
        }
      binding.BySplitBtn.setOnClickListener{
      var amounts = binding.amountEditText.text.toString().toInt()
