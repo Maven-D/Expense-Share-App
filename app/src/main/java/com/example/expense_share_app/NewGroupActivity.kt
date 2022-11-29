@@ -27,6 +27,15 @@ class NewGroupActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, HomeActivity::class.java)
             startActivity(intent)
         }
+
+        binding.createButton.setOnClickListener{
+            val n = binding.sizeEditText.text.toString().toInt()
+            if(n!=0){
+            val intent = Intent(applicationContext, MyGroupsActivity::class.java)
+                intent.putExtra("size", n)
+                startActivity(intent)
+        }
+    }
     }
 
 }

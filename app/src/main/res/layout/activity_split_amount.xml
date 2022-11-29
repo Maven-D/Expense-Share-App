@@ -26,8 +26,11 @@
     <TextView
         android:id="@+id/Amount"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="30dp"
+        android:textColor="@color/blue_dark"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/mem1"
         app:layout_constraintStart_toStartOf="@+id/appBarLayout2"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout2"
@@ -46,11 +49,12 @@
         android:id="@+id/amount1"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:text="Amount 1"
+        android:text="Rs. 0.00"
         app:layout_constraintBottom_toBottomOf="@+id/mem1"
         app:layout_constraintEnd_toEndOf="@+id/appBarLayout2"
         app:layout_constraintTop_toTopOf="@+id/mem1" />
- <TextView
+
+    <TextView
         android:id="@+id/mem2"
         android:layout_width="200dp"
         android:layout_height="25dp"
@@ -63,11 +67,12 @@
         android:id="@+id/amount2"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:text="Amount 2"
+        android:text=" Rs. 0.00"
         app:layout_constraintBottom_toBottomOf="@+id/mem2"
         app:layout_constraintEnd_toEndOf="@+id/appBarLayout2"
         app:layout_constraintTop_toTopOf="@+id/mem2" />
- <TextView
+
+    <TextView
         android:id="@+id/mem3"
         android:layout_width="200dp"
         android:layout_height="25dp"
@@ -80,11 +85,12 @@
         android:id="@+id/amount3"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:text="Amount 3"
+        android:text="Rs. 0.00"
         app:layout_constraintBottom_toBottomOf="@+id/mem3"
         app:layout_constraintEnd_toEndOf="@+id/appBarLayout2"
         app:layout_constraintTop_toTopOf="@+id/mem3" />
- <TextView
+
+    <TextView
         android:id="@+id/mem4"
         android:layout_width="200dp"
         android:layout_height="25dp"
@@ -97,9 +103,20 @@
         android:id="@+id/amount4"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:text="Amount 4"
+        android:text="Rs. 0.00"
         app:layout_constraintBottom_toBottomOf="@+id/mem4"
         app:layout_constraintEnd_toEndOf="@+id/appBarLayout2"
         app:layout_constraintTop_toTopOf="@+id/mem4" />
+
+
+    <TextView
+        android:id="@+id/paid_by"
+        android:layout_width="380dp"
+        android:layout_height="30dp"
+        android:text=""
+        android:textColor="@color/blue_dark"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Amount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
