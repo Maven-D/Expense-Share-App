@@ -19,17 +19,30 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/back_button"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/AppTheme.PopupOverlay"
-        tools:layout_editor_absoluteX="-16dp" />
+        android:layout_marginLeft="50dp"/>
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="50dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageButton>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/group_name"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:hint="@string/group_s_name"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:layout_marginTop="40dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -42,12 +55,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/group_size"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:hint="Enter no. of members"
-        app:layout_constraintTop_toBottomOf="@+id/group_name"
-        tools:layout_editor_absoluteX="0dp">
+        android:hint="Enter no. of members:"
+        app:layout_constraintEnd_toEndOf="@+id/group_name"
+        app:layout_constraintStart_toStartOf="@+id/group_name"
+        app:layout_constraintTop_toBottomOf="@+id/group_name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -59,10 +73,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:hint="Add members"
+        app:layout_constraintEnd_toEndOf="@+id/group_size"
         app:layout_constraintStart_toStartOf="@+id/group_size"
         app:layout_constraintTop_toBottomOf="@id/group_size">
 
@@ -82,5 +97,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

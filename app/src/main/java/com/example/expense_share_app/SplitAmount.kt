@@ -23,5 +23,8 @@ class SplitAmount : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        val amountr = intent.getIntExtra("Extra_amount", 0)
+        val HeaderString2 = "Total Amount: $amountr"
+        binding.Amount.text = HeaderString2
     }
 }

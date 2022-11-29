@@ -1,17 +1,14 @@
 package com.example.expense_share_app
-
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import android.content.Context
 import android.content.Intent
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import java.text.NumberFormat
+import android.annotation.SuppressLint
 import com.example.expense_share_app.databinding.ActivityPaymentBinding
 
 class PaymentActivity : AppCompatActivity() {
@@ -19,26 +16,37 @@ class PaymentActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityPaymentBinding
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityPaymentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         setSupportActionBar(binding.toolbar)
 
        binding.ByAmountBtn.setOnClickListener{
            val intent = Intent(applicationContext, SplitAmount::class.java)
+           val amount = binding.amountEditText.text.toString().toInt()
+           intent.putExtra("Extra_amount", amount)
            startActivity(intent)
        }
-
- binding.BySplitBtn.setOnClickListener{
-           val intent = Intent(applicationContext, SplitShare::class.java)
-           startActivity(intent)
+     binding.BySplitBtn.setOnClickListener{
+     var amounts = binding.amountEditText.text.toString().toInt()
+           Intent(this, SplitShare::class.java).also {
+               intent.putExtra("Extra_amount", amounts)
+               startActivity(it)
+           }
        }
 
+        binding.backButton.setOnClickListener{
+            val intent = Intent(applicationContext, HomeActivity::class.java)
+            startActivity(intent)
+        }
 
     }
+
 
 
     /**
@@ -46,13 +54,13 @@ class PaymentActivity : AppCompatActivity() {
      */
     private fun calculateShare() {
         // Get the decimal value from the cost of service EditText field
-        val string1 = binding.amountEditText.text.toString()
+//        val string1 = binding.amountEditText.text.toString()
 //        val string2 = binding.share1EditText.text.toString()
 //        val string3 = binding.share2EditText.text.toString()
 //        val string4 = binding.share3EditText.text.toString()
 //        val string5 = binding.share4EditText.text.toString()
 
-        val amount = string1.toDoubleOrNull()
+//        val amount = string1.toDoubleOrNull()
 //        val s1 = string2.toDoubleOrNull()
 //        val s2 = string3.toDoubleOrNull()
 //        val s3 = string4.toDoubleOrNull()

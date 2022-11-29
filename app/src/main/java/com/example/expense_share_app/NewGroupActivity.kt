@@ -1,5 +1,6 @@
 package com.example.expense_share_app
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +23,10 @@ class NewGroupActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-
+        binding.backButton.setOnClickListener{
+            val intent = Intent(applicationContext, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }
