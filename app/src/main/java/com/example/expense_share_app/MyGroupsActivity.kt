@@ -23,9 +23,16 @@ class MyGroupsActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        val sizer = intent.getIntExtra("size",0)
 
         binding.button1.setOnClickListener{
             val intent = Intent(applicationContext, PaymentActivity::class.java)
+            intent.putExtra("size_sent", sizer)
+            startActivity(intent)
+        }
+
+        binding.backButton.setOnClickListener{
+            val intent = Intent(applicationContext, HomeActivity::class.java)
             startActivity(intent)
         }
     }
