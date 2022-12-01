@@ -81,7 +81,8 @@ class SignupPage : Fragment() {
                     }
                 }
             }
-            val intent = Intent(context, HomeActivity::class.java)
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("callIntent", 1)
             startActivity(intent)
         })
     }
