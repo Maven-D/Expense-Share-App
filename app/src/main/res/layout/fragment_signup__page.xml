@@ -76,6 +76,7 @@
             android:id="@+id/password_edit_text"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:layout_marginTop="30dp"
             android:hint="@string/Password" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -94,6 +95,7 @@
             android:id="@+id/confirmPassword_edit_text"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:layout_marginTop="30dp"
             android:hint="Confirm Password" />
     </com.google.android.material.textfield.TextInputLayout>
