@@ -57,18 +57,8 @@ class SignupPage : Fragment() {
             }
             auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString()).addOnCompleteListener() { task ->
                 if(task.isSuccessful) {
-                    val actionCodeSettings = actionCodeSettings {
-                        // URL you want to redirect back to. The domain (www.example.com) for this
-                        // URL must be whitelisted in the Firebase Console.
-                        url = "https://stud.iitp.ac.in/"
-                        // This must be true
-                        handleCodeInApp = true
-                        setAndroidPackageName(
-                            "com.example.expense_sharing_app",
-                            true, /* installIfNotAvailable */
-                            "12" /* minimumVersion */)
-                    }
-                    auth.sendSignInLinkToEmail(email.text.toString(), actionCodeSettings).addOnCompleteListener() { verify ->
+
+                    auth.currentUser?.sendEmailVerification()?.addOnCompleteListener() { verify ->
                         if(verify.isSuccessful) {
                             val userName = name.text.toString()
                             val userEmail = name.text.toString()
@@ -77,8 +67,10 @@ class SignupPage : Fragment() {
                             val newUser = User(userName, userEmail, userPassword)
                             ref.child("users").child(newUser.encodeData(userEmail)).setValue(newUser)
                         }
-
                     }
+                }
+                else {
+                    Toast.makeText(context, "Invalid input data", Toast.LENGTH_SHORT).show()
                 }
             }
             val intent = Intent(context, MainActivity::class.java)
