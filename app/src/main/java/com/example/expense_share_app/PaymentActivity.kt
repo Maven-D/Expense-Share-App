@@ -38,11 +38,11 @@ class PaymentActivity : AppCompatActivity() {
                 val intent = Intent(applicationContext, SplitAmount::class.java)
                 intent.putExtra("Extra_amount", amounts)
                 intent.putExtra("size_from_pay_activity", sizeReceived)
-                intent.putExtra("Person", person )
+                intent.putExtra("Person", person)
                 startActivity(intent)
-            }
-            else if((amounts.toString() == null) || amounts==0){
-                Toast.makeText(applicationContext, "Amount cannot be zero!", Toast.LENGTH_LONG).show()
+            } else if ((amounts.toString() == null) || amounts == 0) {
+                Toast.makeText(applicationContext, "Amount cannot be zero!", Toast.LENGTH_LONG)
+                    .show()
             }
         }
 
@@ -58,21 +58,22 @@ class PaymentActivity : AppCompatActivity() {
                 intent.putExtra("Person", person)
                 startActivity(intent)
 
-            val amount1 = binding.amountEditText.text.toString().toInt()
-            val person1 = binding.personEditText.text.toString()
-            if (amount1 != 0) {
-                val intent = Intent(applicationContext, SplitShare::class.java)
-                intent.putExtra("Extra_amount", amount1)
-                intent.putExtra("size_from_pay_activity", size_received)
-                intent.putExtra("Person", person1 )
+                val amount1 = binding.amountEditText.text.toString().toInt()
+                val person1 = binding.personEditText.text.toString()
+                if (amount1 != 0) {
+                    val intent = Intent(applicationContext, SplitShare::class.java)
+                    intent.putExtra("Extra_amount", amount1)
+                    intent.putExtra("size_from_pay_activity", sizeReceived)
+                    intent.putExtra("Person", person1)
+                    startActivity(intent)
+                }
+            }
+
+            binding.backButton.setOnClickListener {
+                val intent = Intent(applicationContext, HomeActivity::class.java)
                 startActivity(intent)
             }
-        }
 
-        binding.backButton.setOnClickListener {
-            val intent = Intent(applicationContext, HomeActivity::class.java)
-            startActivity(intent)
         }
-
     }
 }

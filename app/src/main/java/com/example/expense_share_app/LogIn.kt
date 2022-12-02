@@ -59,7 +59,8 @@ class LogIn : Fragment() {
 
         val loginButton = view.findViewById<Button>(R.id.loginbtn)
         loginButton.setOnClickListener(View.OnClickListener {
-            if(!auth.currentUser?.isEmailVerified!!) {
+            val user = auth.currentUser
+            if((user != null) && !user.isEmailVerified) {
                 Toast.makeText(context, "Please verify your email", Toast.LENGTH_SHORT).show()
                 return@OnClickListener
             }
