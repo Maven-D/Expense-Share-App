@@ -10,6 +10,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.annotation.SuppressLint
 import android.util.Log
+import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import com.example.expense_share_app.databinding.ActivityPaymentBinding
 
@@ -40,6 +41,9 @@ class PaymentActivity : AppCompatActivity() {
                 intent.putExtra("Person", person )
                 startActivity(intent)
             }
+            else if((amounts.toString() == null) || amounts==0){
+                Toast.makeText(applicationContext, "Amount cannot be zero!", Toast.LENGTH_LONG).show()
+            }
         }
 
         binding.BySplitBtn.setOnClickListener {
@@ -54,6 +58,14 @@ class PaymentActivity : AppCompatActivity() {
                 intent.putExtra("Person", person)
                 startActivity(intent)
 
+            val amount1 = binding.amountEditText.text.toString().toInt()
+            val person1 = binding.personEditText.text.toString()
+            if (amount1 != 0) {
+                val intent = Intent(applicationContext, SplitShare::class.java)
+                intent.putExtra("Extra_amount", amount1)
+                intent.putExtra("size_from_pay_activity", size_received)
+                intent.putExtra("Person", person1 )
+                startActivity(intent)
             }
         }
 

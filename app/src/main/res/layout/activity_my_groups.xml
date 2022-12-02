@@ -36,7 +36,7 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Group 1"
@@ -47,12 +47,24 @@
     <Button
         android:id="@+id/loginbtn"
         android:layout_width="match_parent"
+        android:id="@+id/button2"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Group 2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+ <Button
+        android:id="@+id/button3"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Group 3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 
 
