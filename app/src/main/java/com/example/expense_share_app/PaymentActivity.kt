@@ -9,6 +9,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.annotation.SuppressLint
+import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import com.example.expense_share_app.databinding.ActivityPaymentBinding
@@ -26,15 +27,17 @@ class PaymentActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
-        val size_received = intent.getIntExtra("size_sent", 0)
+        val sizeReceived = intent.getIntExtra("size_sent", 0)
+
 
         binding.ByAmountBtn.setOnClickListener {
             val amounts = binding.amountEditText.text.toString().toInt()
+
             val person = binding.personEditText.text.toString()
             if (amounts != 0) {
                 val intent = Intent(applicationContext, SplitAmount::class.java)
                 intent.putExtra("Extra_amount", amounts)
-                intent.putExtra("size_from_pay_activity", size_received)
+                intent.putExtra("size_from_pay_activity", sizeReceived)
                 intent.putExtra("Person", person )
                 startActivity(intent)
             }
@@ -44,6 +47,17 @@ class PaymentActivity : AppCompatActivity() {
         }
 
         binding.BySplitBtn.setOnClickListener {
+            val amounts = binding.amountEditText.text.toString().toInt()
+            val person = binding.personEditText.text.toString()
+            Log.d("inside bysplitbtn", "onCreate: $person")
+
+            if (amounts != 0) {
+                val intent = Intent(this, SplitShare::class.java)
+                intent.putExtra("Extra_amount", amounts)
+                intent.putExtra("size_from_pay_activity", sizeReceived)
+                intent.putExtra("Person", person)
+                startActivity(intent)
+
             val amount1 = binding.amountEditText.text.toString().toInt()
             val person1 = binding.personEditText.text.toString()
             if (amount1 != 0) {
