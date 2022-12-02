@@ -45,7 +45,7 @@ class SplitShare : AppCompatActivity() {
                 val share2 = s2.text.toString().toInt()
                 val share3 = s3.text.toString().toInt()
                 val share4 = s4.text.toString().toInt()
-                calculateShare(share1, share2, share3, share4, amountr)
+                calculateShare(share1, share2, share3, share4, amount)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -64,7 +64,7 @@ class SplitShare : AppCompatActivity() {
                 val share1 = s1.text.toString().toInt()
                 val share3 = s3.text.toString().toInt()
                 val share4 = s4.text.toString().toInt()
-                calculateShare(share1, share2, share3, share4, amountr)
+                calculateShare(share1, share2, share3, share4, amount)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -83,7 +83,7 @@ class SplitShare : AppCompatActivity() {
                 val share2 = s2.text.toString().toInt()
                 val share1 = s1.text.toString().toInt()
                 val share4 = s4.text.toString().toInt()
-                calculateShare(share1, share2, share3, share4, amountr)
+                calculateShare(share1, share2, share3, share4, amount)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -102,7 +102,7 @@ class SplitShare : AppCompatActivity() {
                 val share2 = s2.text.toString().toInt()
                 val share3 = s3.text.toString().toInt()
                 val share1 = s1.text.toString().toInt()
-                calculateShare(share1, share2, share3, share4, amountr)
+                calculateShare(share1, share2, share3, share4, amount)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -122,7 +122,7 @@ class SplitShare : AppCompatActivity() {
         val result2 = (amountr * s2) / sum
         val result3 = (amountr * s3) / sum
         val result4 = (amountr * s4) / sum
-=======
+
         val personname = intent.getStringExtra("Person1")
         val Headerstring2 = "Paid by: $personname"
         binding.person.text = Headerstring2
@@ -174,7 +174,7 @@ class SplitShare : AppCompatActivity() {
         binding.result3.text = fShare3
         binding.result4.text = fShare4
     }
-}
+
 
 
     fun validate(s1:Editable?, s2:Editable?, s3:Editable?, s4:Editable?) : Boolean {
