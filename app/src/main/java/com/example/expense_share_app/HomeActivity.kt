@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.expense_share_app.databinding.ActivityHomeBinding
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -58,6 +59,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.group_menu -> startActivity(Intent(applicationContext, MyGroupsActivity::class.java))
             R.id.add_group_menu -> startActivity(Intent(applicationContext, NewGroupActivity::class.java))
+            R.id.logout -> {
+                FirebaseAuth.getInstance().signOut()
+                startActivity(Intent(applicationContext, MainActivity::class.java))
+            }
         }
         return true
     }
