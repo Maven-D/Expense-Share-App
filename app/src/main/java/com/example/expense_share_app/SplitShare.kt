@@ -122,6 +122,19 @@ class SplitShare : AppCompatActivity() {
 
     }
     //     Calculate the share
+<<<<<<< HEAD
+=======
+    fun calculateShare(s1:Int, s2:Int, s3:Int, s4:Int, amountr:Int) {
+        val sum = s1 + s2 + s3 + s4
+        val result1 = (amountr * s1) / sum
+        val result2 = (amountr * s2) / sum
+        val result3 = (amountr * s3) / sum
+        val result4 = (amountr * s4) / sum
+
+        val personname = intent.getStringExtra("Person1")
+        val Headerstring2 = "Paid by: $personname"
+        binding.person.text = Headerstring2
+>>>>>>> aacb9014dcb2bcf7389b2ca2aa1591132b8b10ea
 
     private fun calculateShare(s1:Int, s2:Int, s3:Int, s4:Int, amount:Int){
         val size1 = intent.getIntExtra("size_from_pay_activity", 0)
@@ -157,7 +170,7 @@ class SplitShare : AppCompatActivity() {
         binding.result3.text = fShare3
         binding.result4.text = fShare4
     }
-}
+
 
 
     fun validate(s1:Editable?, s2:Editable?, s3:Editable?, s4:Editable?) : Boolean {

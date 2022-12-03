@@ -60,6 +60,11 @@ class LogIn : Fragment() {
 
         val loginButton = view.findViewById<Button>(R.id.loginbtn)
         loginButton.setOnClickListener(View.OnClickListener {
+            val user = auth.currentUser
+            if((user != null) && !user.isEmailVerified) {
+                Toast.makeText(context, "Please verify your email", Toast.LENGTH_SHORT).show()
+                return@OnClickListener
+            }
             val userEmail = email.text.toString()
             val userPassword = password.text.toString()
             auth.signInWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener() { task ->

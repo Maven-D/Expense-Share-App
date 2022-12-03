@@ -38,10 +38,15 @@ class PaymentActivity : AppCompatActivity() {
                 intent.putExtra("Extra_amount", amounts)
                 intent.putExtra("size_from_pay_activity", sizeReceived)
                 intent.putExtra("Person", person)
+<<<<<<< HEAD
                 intent.putExtra("purpose", purp)
                 startActivity(intent)
             }
             else if ((amounts == null) || amounts == 0) {
+=======
+                startActivity(intent)
+            } else if ((amounts.toString() == null) || amounts == 0) {
+>>>>>>> aacb9014dcb2bcf7389b2ca2aa1591132b8b10ea
                 Toast.makeText(applicationContext, "Amount cannot be zero!", Toast.LENGTH_LONG)
                     .show()
             }
@@ -58,14 +63,28 @@ class PaymentActivity : AppCompatActivity() {
                 intent.putExtra("Extra_amount", amounts)
                 intent.putExtra("size_from_pay_activity", sizeReceived)
                 intent.putExtra("Person", person)
+<<<<<<< HEAD
                 intent.putExtra("purpose", purp)
+=======
+                startActivity(intent)
+
+                val amount1 = binding.amountEditText.text.toString().toInt()
+                val person1 = binding.personEditText.text.toString()
+                if (amount1 != 0) {
+                    val intent = Intent(applicationContext, SplitShare::class.java)
+                    intent.putExtra("Extra_amount", amount1)
+                    intent.putExtra("size_from_pay_activity", sizeReceived)
+                    intent.putExtra("Person", person1)
+                    startActivity(intent)
+                }
+            }
+
+            binding.backButton.setOnClickListener {
+                val intent = Intent(applicationContext, HomeActivity::class.java)
+>>>>>>> aacb9014dcb2bcf7389b2ca2aa1591132b8b10ea
                 startActivity(intent)
             }
-        }
 
-        binding.backButton.setOnClickListener {
-            val intent = Intent(applicationContext, HomeActivity::class.java)
-            startActivity(intent)
         }
     }
 }
