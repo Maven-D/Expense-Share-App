@@ -24,6 +24,9 @@ class MyGroupsActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val sizer = intent.getIntExtra("size",0)
+        val gname = intent.getStringExtra("group_name")
+
+        binding.button1.text = "${gname}"
 
         binding.button1.setOnClickListener{
             val intent = Intent(applicationContext, PaymentActivity::class.java)

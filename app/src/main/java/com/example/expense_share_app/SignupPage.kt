@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.expense_share_app.databinding.FragmentSignupPageBinding
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.actionCodeSettings
 import com.google.firebase.auth.ktx.auth
@@ -22,6 +23,7 @@ class SignupPage : Fragment() {
      private lateinit var _binding: com.example.expense_share_app.databinding.FragmentSignupPageBinding
      private val binding get()= _binding
     private lateinit var auth: FirebaseAuth
+
 
     override fun onCreateView(inflater:LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): ConstraintLayout {

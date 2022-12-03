@@ -27,4 +27,12 @@
     <string name="title_activity_split_amount">SplitAmount</string>
     <string name="title_activity_split_share">SplitShare</string>
     <string name="group_s_name">Group\'s Name</string>
+
+    <string-array name="programming_languages">
+        <item>Divyam</item>
+        <item>Divit</item>
+        <item>Varun</item>
+        <item>Deepak</item>
+    </string-array>
+
 </resources>

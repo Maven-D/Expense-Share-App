@@ -8,9 +8,8 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.expense_share_app.databinding.ActivityNewGroupBinding
+
 
 class NewGroupActivity : AppCompatActivity() {
 
@@ -33,8 +32,10 @@ class NewGroupActivity : AppCompatActivity() {
 
         binding.createButton.setOnClickListener{
             val n = binding.sizeEditText.text.toString().toInt()
+            val name = binding.nameEditText.text.toString()
             if(n!=0){
                 val intent = Intent(applicationContext, MyGroupsActivity::class.java)
+                intent.putExtra("group_name", name)
                 intent.putExtra("size", n)
                 startActivity(intent)
              }
@@ -42,7 +43,8 @@ class NewGroupActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "There should be atleast one member in the group!", Toast.LENGTH_LONG).show()
             }
 
-    }
+        }
+
     }
 
 }

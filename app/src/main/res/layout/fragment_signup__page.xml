@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SignupPage">
 
-<!--    <TextView-->
-<!--        android:id="@+id/register"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        android:shadowColor="@color/material_dynamic_primary10"-->
-<!--        android:text="Register"-->
-<!--        android:textColor="@color/purple_700"-->
-<!--        android:textColorHighlight="@color/blue_dark"-->
-<!--        android:textSize="25sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.498"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/name"

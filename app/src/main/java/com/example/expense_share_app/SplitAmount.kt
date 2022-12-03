@@ -24,12 +24,16 @@ class SplitAmount : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val amountr = intent.getIntExtra("Extra_amount", 0)
-        val HeaderString1 = "Total Amount: $amountr"
+        val HeaderString1 = "Total Amount: $amountr Rs."
         binding.Amount.text = HeaderString1
 
         val person_name = intent.getStringExtra("Person")
         val HeaderString2 = "Paid By: $person_name"
         binding.paidBy.text = HeaderString2
+
+        val purpose2 = intent.getStringExtra("purpose")
+        val Bottom_String = "Purpose: $purpose2 "
+        binding.Purpose1.text = Bottom_String
 
         val size2 = intent.getIntExtra("size_from_pay_activity", 0)
 

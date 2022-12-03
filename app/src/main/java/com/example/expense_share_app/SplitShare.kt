@@ -2,7 +2,6 @@ package com.example.expense_share_app
 
 import android.content.Intent
 import android.os.Bundle
-
 import android.text.Editable
 import android.text.TextWatcher
 
@@ -28,14 +27,21 @@ class SplitShare : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val amount = intent.getIntExtra("Extra_amount", 0)
-        val Headerstring = "Total Amount: $amount"
+        val Headerstring = "Total Amount: $amount Rs."
         binding.Amount.text = Headerstring
+
+        val purpose = intent.getStringExtra("purpose")
+        val Bs = "Purpose: $purpose "
+        binding.Purpose3.text = Bs
+
+        val person_name = intent.getStringExtra("Person")
+        val headerstring2 = "Paid by: $person_name"
+        binding.person.text = headerstring2
       
         val s1 = binding.share1EditText
         val s2 = binding.share2EditText
         val s3 = binding.share3EditText
         val s4 = binding.share4EditText
-
 
 
         s1.addTextChangedListener(object: TextWatcher {
@@ -45,7 +51,7 @@ class SplitShare : AppCompatActivity() {
                 val share2 = s2.text.toString().toInt()
                 val share3 = s3.text.toString().toInt()
                 val share4 = s4.text.toString().toInt()
-                calculateShare(share1, share2, share3, share4, amountr)
+                calculateShare(share1, share2, share3, share4, amount)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -64,7 +70,7 @@ class SplitShare : AppCompatActivity() {
                 val share1 = s1.text.toString().toInt()
                 val share3 = s3.text.toString().toInt()
                 val share4 = s4.text.toString().toInt()
-                calculateShare(share1, share2, share3, share4, amountr)
+                calculateShare(share1, share2, share3, share4, amount)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -83,7 +89,7 @@ class SplitShare : AppCompatActivity() {
                 val share2 = s2.text.toString().toInt()
                 val share1 = s1.text.toString().toInt()
                 val share4 = s4.text.toString().toInt()
-                calculateShare(share1, share2, share3, share4, amountr)
+                calculateShare(share1, share2, share3, share4, amount)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -102,7 +108,7 @@ class SplitShare : AppCompatActivity() {
                 val share2 = s2.text.toString().toInt()
                 val share3 = s3.text.toString().toInt()
                 val share1 = s1.text.toString().toInt()
-                calculateShare(share1, share2, share3, share4, amountr)
+                calculateShare(share1, share2, share3, share4, amount)
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -116,46 +122,23 @@ class SplitShare : AppCompatActivity() {
 
     }
     //     Calculate the share
-    fun calculateShare(s1:Int, s2:Int, s3:Int, s4:Int, amountr:Int) {
-        val sum = s1 + s2 + s3 + s4
-        val result1 = (amountr * s1) / sum
-        val result2 = (amountr * s2) / sum
-        val result3 = (amountr * s3) / sum
-        val result4 = (amountr * s4) / sum
-=======
-        val personname = intent.getStringExtra("Person1")
-        val Headerstring2 = "Paid by: $personname"
-        binding.person.text = Headerstring2
 
-        val size1 = intent.getIntExtra("size_from_pay_activity", 0)
-
-        calculatShare()
-        binding.calculate.setOnClickListener{
-            calculatShare()
-        }
-    }
-
-
-    private fun calculatShare(){
+    private fun calculateShare(s1:Int, s2:Int, s3:Int, s4:Int, amount:Int){
         val size1 = intent.getIntExtra("size_from_pay_activity", 0)
         val amountr = intent.getIntExtra("Extra_amount", 0)
 
-        var s1 = binding.share1EditText.text.toString().toInt()
-        var s2 = binding.share2EditText.text.toString().toInt()
-        var s3 = binding.share3EditText.text.toString().toInt()
-        var s4 = binding.share4EditText.text.toString().toInt()
 
-        if(size1==3)
-            s4=0
-        if(size1==2){
-            s3=0
-            s4=0
-        }
-        if(size1==1) {
-            s2 = 0
-            s3 = 0
-            s4 = 0
-        }
+//        if(size1==3)
+//            s4=0
+//        if(size1==2){
+//            s3=0
+//            s4=0
+//        }
+//        if(size1==1) {
+//            s2 = 0
+//            s3 = 0
+//            s4 = 0
+//        }
 //     Calculate the share
         val sum = s1 + s2 + s3 + s4
         val result1 = amountr * (s1.toDouble() / sum.toDouble())
@@ -182,4 +165,3 @@ class SplitShare : AppCompatActivity() {
                 && s2.toString() != "" && s3.toString() != "" && s4.toString() != ""
     }
 
-}

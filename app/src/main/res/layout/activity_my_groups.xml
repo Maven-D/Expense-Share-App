@@ -11,18 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
-        app:layout_constraintStart_toEndOf="@+id/back_button"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="50dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:layout_marginLeft="50dp"
             android:background="?attr/colorPrimary"
+            app:layout_constraintStart_toEndOf="@+id/back_button"
+            app:layout_constraintTop_toTopOf="parent"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </com.google.android.material.appbar.AppBarLayout>
 
     <ImageButton
         android:id="@+id/back_button"
@@ -38,34 +41,12 @@
         android:id="@+id/button1"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Group 1"
+        android:layout_marginTop="92dp"
+        android:text="Friends"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout4" />
-
-    <Button
-        android:id="@+id/loginbtn"
-        android:layout_width="match_parent"
-        android:id="@+id/button2"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Group 2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
-
- <Button
-        android:id="@+id/button3"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Group 3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

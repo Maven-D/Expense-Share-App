@@ -63,12 +63,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
+        android:textColor="@color/material_dynamic_secondary20"
         app:layout_constraintBottom_toBottomOf="@+id/share1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/share1"
         app:layout_constraintTop_toTopOf="@+id/share1"
         tools:text="Amount: $10">
-
     </TextView>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -88,10 +88,6 @@
             android:text="1"
             android:inputType="numberDecimal" />
 
-            android:inputType="numberDecimal"
-            android:text="1"/>
-
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -101,9 +97,9 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/share2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/share2"
         app:layout_constraintTop_toTopOf="@+id/share2"
+        app:layout_constraintVertical_bias="0.607"
         tools:text="Amount: $10" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -123,8 +119,7 @@
             android:text="1"
             android:inputType="numberDecimal" />
 
-            android:inputType="numberDecimal"
-            android:text="1"/>
+
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -155,8 +150,7 @@
             android:layout_height="50dp"
             android:text="1"
             android:inputType="numberDecimal" />
-            android:inputType="numberDecimal"
-            android:text="1"/>
+
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -181,16 +175,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Amount" />
 
-    <Button
-        android:id="@+id/calculate"
+    <TextView
+        android:id="@+id/Purpose3"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="CALCULATE"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/share4" />
+        app:layout_constraintTop_toBottomOf="@+id/result4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

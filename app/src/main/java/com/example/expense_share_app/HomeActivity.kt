@@ -10,6 +10,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.example.expense_share_app.databinding.ActivityHomeBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -38,10 +40,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // to make the Navigation drawer icon always appear on the action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.groupButton.setOnClickListener{
-            val intent = Intent(applicationContext, PaymentActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     // override the onOptionsItemSelected()
@@ -66,10 +64,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         return true
     }
-
-
-
-
 
 }
 
