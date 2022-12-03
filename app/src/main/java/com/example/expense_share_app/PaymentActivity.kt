@@ -38,15 +38,14 @@ class PaymentActivity : AppCompatActivity() {
                 intent.putExtra("Extra_amount", amounts)
                 intent.putExtra("size_from_pay_activity", sizeReceived)
                 intent.putExtra("Person", person)
-<<<<<<< HEAD
+
                 intent.putExtra("purpose", purp)
                 startActivity(intent)
             }
             else if ((amounts == null) || amounts == 0) {
-=======
                 startActivity(intent)
             } else if ((amounts.toString() == null) || amounts == 0) {
->>>>>>> aacb9014dcb2bcf7389b2ca2aa1591132b8b10ea
+
                 Toast.makeText(applicationContext, "Amount cannot be zero!", Toast.LENGTH_LONG)
                     .show()
             }
@@ -63,9 +62,9 @@ class PaymentActivity : AppCompatActivity() {
                 intent.putExtra("Extra_amount", amounts)
                 intent.putExtra("size_from_pay_activity", sizeReceived)
                 intent.putExtra("Person", person)
-<<<<<<< HEAD
+
                 intent.putExtra("purpose", purp)
-=======
+
                 startActivity(intent)
 
                 val amount1 = binding.amountEditText.text.toString().toInt()
@@ -81,7 +80,6 @@ class PaymentActivity : AppCompatActivity() {
 
             binding.backButton.setOnClickListener {
                 val intent = Intent(applicationContext, HomeActivity::class.java)
->>>>>>> aacb9014dcb2bcf7389b2ca2aa1591132b8b10ea
                 startActivity(intent)
             }
 

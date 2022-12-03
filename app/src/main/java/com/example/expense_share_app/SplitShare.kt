@@ -13,6 +13,7 @@ import java.text.NumberFormat
 import java.util.*
 import kotlin.concurrent.schedule
 
+
 class SplitShare : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -21,7 +22,6 @@ class SplitShare : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivitySplitShareBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
@@ -37,16 +37,16 @@ class SplitShare : AppCompatActivity() {
         val person_name = intent.getStringExtra("Person")
         val headerstring2 = "Paid by: $person_name"
         binding.person.text = headerstring2
-      
+
         val s1 = binding.share1EditText
         val s2 = binding.share2EditText
         val s3 = binding.share3EditText
         val s4 = binding.share4EditText
 
 
-        s1.addTextChangedListener(object: TextWatcher {
+        s1.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
-                if(!validate(p0, s2.text, s3.text, s4.text)) return
+                if (!validate(p0, s2.text, s3.text, s4.text)) return
                 val share1 = p0.toString().toInt()
                 val share2 = s2.text.toString().toInt()
                 val share3 = s3.text.toString().toInt()
@@ -63,9 +63,9 @@ class SplitShare : AppCompatActivity() {
             }
         })
 
-        s2.addTextChangedListener(object: TextWatcher {
+        s2.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
-                if(!validate(s1.text, p0, s3.text, s4.text)) return
+                if (!validate(s1.text, p0, s3.text, s4.text)) return
                 val share2 = p0.toString().toInt()
                 val share1 = s1.text.toString().toInt()
                 val share3 = s3.text.toString().toInt()
@@ -82,9 +82,9 @@ class SplitShare : AppCompatActivity() {
             }
         })
 
-        s3.addTextChangedListener(object: TextWatcher {
+        s3.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
-                if(!validate(s1.text, s2.text, p0, s4.text)) return
+                if (!validate(s1.text, s2.text, p0, s4.text)) return
                 val share3 = p0.toString().toInt()
                 val share2 = s2.text.toString().toInt()
                 val share1 = s1.text.toString().toInt()
@@ -101,9 +101,9 @@ class SplitShare : AppCompatActivity() {
             }
         })
 
-        s4.addTextChangedListener(object: TextWatcher {
+        s4.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
-                if(!validate(s1.text, s2.text, s3.text, p0)) return
+                if (!validate(s1.text, s2.text, s3.text, p0)) return
                 val share4 = p0.toString().toInt()
                 val share2 = s2.text.toString().toInt()
                 val share3 = s3.text.toString().toInt()
@@ -122,21 +122,13 @@ class SplitShare : AppCompatActivity() {
 
     }
     //     Calculate the share
-<<<<<<< HEAD
-=======
-    fun calculateShare(s1:Int, s2:Int, s3:Int, s4:Int, amountr:Int) {
-        val sum = s1 + s2 + s3 + s4
-        val result1 = (amountr * s1) / sum
-        val result2 = (amountr * s2) / sum
-        val result3 = (amountr * s3) / sum
-        val result4 = (amountr * s4) / sum
+
+    fun calculateShare(s1: Int, s2: Int, s3: Int, s4: Int, amountr: Int) {
 
         val personname = intent.getStringExtra("Person1")
         val Headerstring2 = "Paid by: $personname"
         binding.person.text = Headerstring2
->>>>>>> aacb9014dcb2bcf7389b2ca2aa1591132b8b10ea
 
-    private fun calculateShare(s1:Int, s2:Int, s3:Int, s4:Int, amount:Int){
         val size1 = intent.getIntExtra("size_from_pay_activity", 0)
         val amountr = intent.getIntExtra("Extra_amount", 0)
 
@@ -158,7 +150,7 @@ class SplitShare : AppCompatActivity() {
         val result2 = amountr * (s2.toDouble() / sum.toDouble())
         val result3 = amountr * (s3.toDouble() / sum.toDouble())
         val result4 = amountr * (s4.toDouble() / sum.toDouble())
-        
+
 
         val fShare1 = NumberFormat.getCurrencyInstance().format(result1)
         val fShare2 = NumberFormat.getCurrencyInstance().format(result2)
@@ -172,9 +164,8 @@ class SplitShare : AppCompatActivity() {
     }
 
 
-
-    fun validate(s1:Editable?, s2:Editable?, s3:Editable?, s4:Editable?) : Boolean {
+    fun validate(s1: Editable?, s2: Editable?, s3: Editable?, s4: Editable?): Boolean {
         return s1 != null && s2 != null && s3 != null && s4 != null && s1.toString() != ""
                 && s2.toString() != "" && s3.toString() != "" && s4.toString() != ""
     }
-
+}

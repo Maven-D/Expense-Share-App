@@ -48,30 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout4" />
 
-<<<<<<< HEAD
-=======
-    <Button
-
-        android:id="@+id/button2"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Group 2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
-
- <Button
-        android:id="@+id/button3"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Group 3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 
->>>>>>> aacb9014dcb2bcf7389b2ca2aa1591132b8b10ea
 
 </androidx.constraintlayout.widget.ConstraintLayout>
